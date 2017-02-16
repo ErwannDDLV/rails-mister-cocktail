@@ -1,1 +1,6 @@
-ingredients_controller.rb
+class IngredientsController < ApplicationController
+
+
+
+
+end
