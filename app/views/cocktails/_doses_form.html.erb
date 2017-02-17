@@ -1,5 +1,9 @@
 <%= simple_form_for [@cocktail, @new_dose], class: 'form-horizontal' do |f| %>
-    <%= f.input :ingredient_id, collection: @ingredients %>
-    <%= f.input :description %>
-    <%= f.button :submit %>
-  <% end %>
+  <%= f.input :ingredient_id, collection: @ingredients %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-success'  %>
+  <%= link_to 'Back', cocktails_path, class: 'btn btn-default' %>
+<% end %>
+
+<!-- trier les ingrédients par ordre alpha
+retirer les [] et les "" -->
