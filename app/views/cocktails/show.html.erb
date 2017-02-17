@@ -1,11 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1 class='text-center'>recette</h1>
+      <h1 class='text-center'>Recette</h1>
       <h3 class='text-center'><%= @cocktail.name %></h3>
+      <% if @cocktail.photos.any? %>
+        <%= cl_image_tag @cocktail.photos.first.path, width: 200, height: 300, crop: :fill %>
+      <% end %>
       <ul>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name %> : <%= dose.description %> - <%= link_to "delete", dose_path(dose), method: :delete %></li>
+          <li>
+            <%= dose.ingredient.name %> : <%= dose.description %> - <%= link_to "delete", dose_path(dose), method: :delete %>
+          </li>
         <% end %>
       </ul>
       <div class='dosesform'>
